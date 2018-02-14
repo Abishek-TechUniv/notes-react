@@ -1,10 +1,15 @@
 import React from 'react';
+import Title from '../Title';
+import Body from '../Body';
+import About from '../About';
 
 const App = () =>
   (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Notes App</h1>
+        <Title />
+        <Body />
+        <About />
       </header>
     </div>
   );
