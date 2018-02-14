@@ -1,12 +1,9 @@
 import React from 'react';
+import './Title.css';
 
-const Title = () => (
+const Title = props => (
   <header>
-    <div> Start taking notes </div>
-    <div>
-      <span id="title">Note title </span>
-      <span><button id="lang">en</button></span>
-    </div>
+    <div>{props.title}</div>
   </header>
 );
 

@@ -1,0 +1,16 @@
+.details-container {
+  padding-top: 2%;
+  width: 98vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+#save {
+  font-size: 20px;
+  text-align: left;
+}
+
+#char-count {
+  text-align: right;
+}

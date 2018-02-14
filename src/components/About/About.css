@@ -1,0 +1,14 @@
+.about-container {
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-flow: row;
+}
+
+#about-button{
+  border-radius: 0;
+  background-color: white;
+  height: 3em;
+  flex-grow: 1;
+  font-size: 20px;
+}
