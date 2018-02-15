@@ -1,12 +1,6 @@
-article {
+.Body-article {
+  width: 100%;
+  height: 95vh;
   background-color: #EBE9E9;
-  height: 100%;
 }
 
-button {
-  background-color: #EBE9E9;
-  border: 1px solid #E0E0E0;
-  border-radius: 4px;
-  font-size: 0.6em;
-  font-weight: bold;
-}

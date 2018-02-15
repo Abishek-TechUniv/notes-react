@@ -5,26 +5,21 @@ import Form from '../Form/';
 
 import './Body.css';
 
-class Body extends React.Component {
-  constructor(props) {
-    super(props);
-    Body.propTypes = {
-      onSave: PropTypes.func.isRequired,
-    };
-  }
+const Body = ({ onSave }) => (
+  <article className="Body-article">
+    <HeadText title="Insert text here" lang="en" />
+    <Form onSave={note => onSave(note)} limit="120" />
+  </article>
+);
 
-  // onSave(note) {
-  //   this.props.onSave(note);
-  // }
-  render() {
-    return (
-      <article>
-        <HeadText />
-        <Form onSave={note => this.props.onSave(note)} />
-      </article>
-    );
-  }
-}
 
+Body.propTypes = {
+  onSave: PropTypes.func,
+};
+
+Body.defaultProps = {
+  onSave: note =>
+    alert(`implement function that does something with this:\n ${note}`),
+};
 export default Body;
 

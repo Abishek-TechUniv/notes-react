@@ -1,53 +1,56 @@
-.form-container {
+.Form-container {
   height: 80%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  align-content: space-between;
+  align-content: space-around
 }
 
-#note-title-input {
+.Form-notes-input {
   font-size: 1em;
-  margin-top: 1em;
-  width: 95vw;
+  margin: 0 5% 0 5%;
+  width: 90%;
   height: 3em;
-  border-color: none;
+  border: none;
 }
 
-#directions-text {
-  padding-left: 2vw;
+.Form-directions-text {
+  padding-left: 5%;
   max-width: 50%;
   align-self: flex-start
 }
 
-.text-limit-error {
+.Form-limit-error {
   color: rgb(245, 122, 118);
 }
 
-.details-container {
-  padding-top: 2%;
-  width: 98vw;
+.Form-details-container {
+  padding: 5%;
+  width: 90%;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
 }
 
-#save {
-  font-size: 20px;
-  text-align: left;
-}
-
-#char-count {
+.Form-char-count {
   text-align: right;
 }
 
-#notes-area {
-  height: 30vh;
+.Form-notes-area {
+  height:60vh;
+  resize: none;
   font-size: 1.5em;
-  resize: vertical;
   flex-grow: 1;
-  width: 95vw;
+  width: 90%;
   align-self: center;
   margin: 0 5% 0 5%;
   border-color: none;
+}
+
+.Form-save {
+  background-color: #EBE9E9;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  font-size: 1.5em;
+  font-weight: bold;
 }

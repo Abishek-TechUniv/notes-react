@@ -2,21 +2,19 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import './Title.css';
 
-class Title extends React.Component {
-  constructor(props) {
-    super(props);
-    Title.propTypes = {
-      title: PropTypes.string.isRequired,
-    };
-  }
+const Title = ({ titleText }) =>
+  (
+    <header className="Title-header">
+      <div>{titleText}</div>
+    </header>
+  );
 
-  render() {
-    return (
-      <header>
-        <div>{this.props.title}</div>
-      </header>
-    );
-  }
-}
+Title.defaultProps = {
+  titleText: 'Hello',
+};
+
+Title.propTypes = {
+  titleText: PropTypes.string,
+};
+
 export default Title;
-

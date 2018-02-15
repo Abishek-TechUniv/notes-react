@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Form.css';
+import Directions from '../Directions';
 
 class Form extends React.Component {
   constructor(props) {
@@ -10,77 +11,86 @@ class Form extends React.Component {
       title: '',
       note: '',
     };
-
-    this.limit = 120;
-    Form.propTypes = {
-      onSave: PropTypes.func.isRequired,
-    };
   }
 
-  onTitleChanged(e) {
+  onTitleChanged = (e) => {
     this.setState({ title: e.target.value });
   }
 
-  onTextChanged(e) {
-    const newNote = e.target.value;
-    if (newNote.length >= this.limit) {
-      const slicedNote = newNote.slice(0, this.limit);
-      this.setState({ note: slicedNote });
+  onTextChanged = (e) => {
+    let newNote = e.target.value;
+    if (newNote.length >= this.props.limit) {
+      newNote = newNote.slice(0, this.props.limit);
     }
 
     this.setState({
-      isLimit: newNote.length >= this.limit,
+      isLimit: newNote.length >= this.props.limit,
       note: newNote,
     });
+  }
+
+  handleSave = () => {
+    this.props.onSave({
+      title: this.state.title,
+      note: this.state.note,
+    });
+    if (this.state.title !== '' && this.state.note !== '') {
+      this.setState({
+        title: '',
+        note: '',
+        isLimit: false,
+      });
+    }
   }
 
   render() {
     return (
       <div>
         <div className="form-container">
+
           <input
             type="text"
-            id="note-title-input"
+            className="Form-notes-input"
             placeholder="Enter text"
             value={this.state.title}
             onChange={e => this.onTitleChanged(e)}
           />
 
-          <p id="directions-text"><em>Please type your note below</em> &#128203;</p>
+          <Directions text="Please type your note below" />
+
 
           <textarea
-            id="notes-area"
             value={this.state.note}
-            className={this.state.isLimit ? 'text-limit-error' : ''}
+            className={this.state.isLimit ?
+              'text-limit-error Form-notes-area' : 'Form-notes-area'}
             onChange={e => this.onTextChanged(e)}
           />
         </div>
 
-        <div className="details-container">
+        <div className="Form-details-container">
           <div>
-            <button
-              id="save"
-              onClick={() => {
-                this.props.onSave({
-                  title: this.state.title,
-                  note: this.state.note,
-                });
-                this.setState({
-                  title: '',
-                  note: '',
-                  isLimit: false,
-                });
-              }}
-            >
-            Save
+            <button className="Form-save" onClick={this.handleSave}>
+              Save
             </button>
           </div>
-          <div id="char-count">{this.limit - this.state.note.length} chars</div>
+
+          <div className="Form-char-count">
+            {this.props.limit - this.state.note.length} chars
+          </div>
         </div>
       </div>
     );
   }
 }
 
+Form.propTypes = {
+  onSave: PropTypes.func,
+  limit: PropTypes.number,
+};
+
+Form.defaultProps = {
+  onSave: () => alert('Implement save'),
+  limit: 10,
+};
 
 export default Form;

@@ -1,19 +1,17 @@
 body {
-  margin: 0px;
+  margin: 0;
 }
 
 #root {
-  height: 100vh;
+  width: 100vw;
 }
+
 .App {
-  height: 100%;
+  height: 100vh;
+  width: 100%;
   background-color: #EBE9E9;
   display: flex;
   flex-flow: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.body {
-  flex-grow: 1
+  align-items: stretch;
+  justify-content: center;
 }

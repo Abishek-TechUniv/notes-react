@@ -1,10 +1,23 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
+
 import './HeadText.css';
 
-const HeadText = () => (
-  <div className="head-text-container">
-    <div id="title">Note title</div>
-    <div id="lang"><button>en</button></div>
+
+const HeadText = ({ title, lang }) => (
+  <div className="HeadText-container">
+    <div className="HeadText-title">{title}</div>
+    <div ><button className="HeadText-lang">{lang}</button></div>
   </div>);
+
+HeadText.propTypes = {
+  title: PropTypes.string,
+  lang: PropTypes.string,
+};
+
+HeadText.defaultProps = {
+  title: 'Title',
+  lang: 'en',
+};
 
 export default HeadText;
