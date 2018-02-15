@@ -9,7 +9,6 @@ const Body = () => (
   <article>
     <HeadText />
     <Form />
-    <Details />
   </article>
 
 );

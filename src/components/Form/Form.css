@@ -21,6 +21,7 @@
 }
 
 #notes-area {
+  font-size: 1.5em;
   resize: vertical;
   flex-grow: 1;
   width: 95vw;
@@ -31,4 +32,21 @@
 
 .text-limit-error {
   color: rgb(245, 122, 118);
+}
+
+.details-container {
+  padding-top: 2%;
+  width: 98vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+#save {
+  font-size: 20px;
+  text-align: left;
+}
+
+#char-count {
+  text-align: right;
 }
