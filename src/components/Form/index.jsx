@@ -9,7 +9,7 @@ class Form extends React.Component {
     this.state = {
       isLimit: false,
       title: '',
-      note: '',
+      text: '',
     };
   }
 
@@ -25,19 +25,19 @@ class Form extends React.Component {
 
     this.setState({
       isLimit: newNote.length >= this.props.limit,
-      note: newNote,
+      text: newNote,
     });
   }
 
   handleSave = () => {
     this.props.onSave({
       title: this.state.title,
-      note: this.state.note,
+      text: this.state.text,
     });
     if (this.state.title !== '' && this.state.note !== '') {
       this.setState({
         title: '',
-        note: '',
+        text: '',
         isLimit: false,
       });
     }
@@ -60,9 +60,9 @@ class Form extends React.Component {
 
 
           <textarea
-            value={this.state.note}
+            value={this.state.text}
             className={this.state.isLimit ?
-              'text-limit-error Form-notes-area' : 'Form-notes-area'}
+              'Form-limit-error Form-notes-area' : 'Form-notes-area'}
             onChange={e => this.onTextChanged(e)}
           />
         </div>
@@ -75,7 +75,7 @@ class Form extends React.Component {
           </div>
 
           <div className="Form-char-count">
-            {this.props.limit - this.state.note.length} chars
+            {this.props.limit - this.state.text.length} chars
           </div>
         </div>
       </div>

@@ -9,9 +9,8 @@ body {
 .App {
   height: 100vh;
   width: 100%;
-  background-color: #EBE9E9;
+  background-color: rgb(233,233,239);
   display: flex;
   flex-flow: column;
   align-items: stretch;
-  justify-content: center;
 }

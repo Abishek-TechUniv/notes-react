@@ -1,0 +1,6 @@
+.History-section {
+  overflow-y: scroll;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}

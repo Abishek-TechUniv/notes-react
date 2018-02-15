@@ -4,9 +4,9 @@ import './Title.css';
 
 const Title = ({ titleText }) =>
   (
-    <header className="Title-header">
-      <div>{titleText}</div>
-    </header>
+    <div className="Title-header">
+      {titleText}
+    </div>
   );
 
 Title.defaultProps = {
