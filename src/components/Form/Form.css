@@ -28,3 +28,7 @@
   margin: 0 5% 0 5%;
   border-color: none;
 }
+
+.text-limit-error {
+  color: rgb(245, 122, 118);
+}
