@@ -1,5 +1,7 @@
 .History-section {
-  overflow-y: scroll;
+  overflow: scroll;
+  white-space: nowrap;
+  word-wrap: wrap;
   height: 100%;
   display: flex;
   flex-flow: column;

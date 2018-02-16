@@ -7,7 +7,7 @@ import './History.css';
 
 const History = ({ notes }) => {
   const itemsArr = notes.map(note => (
-    <HistoryItem text={note.text} titleText={note.title} />
+    <HistoryItem key={note.uniqueId} text={note.text} titleText={note.title} />
   ));
   return (<div className="History-section">{itemsArr}</div>);
 };

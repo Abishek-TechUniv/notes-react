@@ -7,6 +7,7 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      uniqueId: '',
       isLimit: false,
       title: '',
       text: '',
@@ -36,6 +37,7 @@ class Form extends React.Component {
     });
     if (this.state.title !== '' && this.state.note !== '') {
       this.setState({
+        uniqueId: (new Date()).toDateString(),
         title: '',
         text: '',
         isLimit: false,
@@ -60,6 +62,7 @@ class Form extends React.Component {
 
 
           <textarea
+            id={this.state.uniqueId}
             value={this.state.text}
             className={this.state.isLimit ?
               'Form-limit-error Form-notes-area' : 'Form-notes-area'}
