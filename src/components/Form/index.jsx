@@ -9,8 +9,8 @@ class Form extends React.Component {
     this.state = {
       uniqueId: '',
       isLimit: false,
-      title: '',
-      text: '',
+      title: props.title,
+      text: props.text,
     };
   }
 
@@ -31,13 +31,15 @@ class Form extends React.Component {
   }
 
   handleSave = () => {
+    const uniqueId = (new Date()).getTime().toString();
     this.props.onSave({
       title: this.state.title,
       text: this.state.text,
+      key: uniqueId,
     });
     if (this.state.title !== '' && this.state.note !== '') {
       this.setState({
-        uniqueId: (new Date()).toDateString(),
+        uniqueId,
         title: '',
         text: '',
         isLimit: false,

@@ -5,10 +5,10 @@ import Form from '../Form/';
 
 import './Body.css';
 
-const Body = ({ onSave }) => (
+const Body = ({ onSave, text, title }) => (
   <article className="Body-article">
     <HeadText title="Insert text here" lang="en" />
-    <Form onSave={note => onSave(note)} limit={120} />
+    <Form onSave={note => onSave(note)} title={title} text={text} limit={120} />
   </article>
 );
 
