@@ -91,11 +91,15 @@ class Form extends React.Component {
 Form.propTypes = {
   onSave: PropTypes.func,
   limit: PropTypes.number,
+  text: PropTypes.string,
+  title: PropTypes.string,
 };
 
 Form.defaultProps = {
   onSave: () => alert('Implement save'),
   limit: 10,
+  text: '',
+  title: '',
 };
 
 export default Form;

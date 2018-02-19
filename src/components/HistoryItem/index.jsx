@@ -15,9 +15,11 @@ const HistoryItem = ({
 HistoryItem.defaultProps = {
   text: 'Lorem ipsum deloret set ami',
   titleText: 'Default Title',
+  editNote: () => console.log('implement editing'),
 };
 
 HistoryItem.propTypes = {
+  editNote: PropTypes.func,
   text: PropTypes.string,
   titleText: PropTypes.string,
 };

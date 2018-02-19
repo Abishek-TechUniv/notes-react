@@ -15,11 +15,15 @@ const Body = ({ onSave, text, title }) => (
 
 Body.propTypes = {
   onSave: PropTypes.func,
+  text: PropTypes.string,
+  title: PropTypes.string,
 };
 
 Body.defaultProps = {
   onSave: note =>
-    alert(`implement function that does something with this:\n ${note}`),
+    console.log(`implement function that does something with this:\n ${note}`),
+  text: '',
+  title: '',
 };
 export default Body;
 
